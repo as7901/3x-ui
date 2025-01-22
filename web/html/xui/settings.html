@@ -26,7 +26,7 @@
     padding: .5rem 1rem;
     text-align: center;
     background: rgb(255 145 0 / 15%);
-    margin: 1.5rem 2.5rem 0rem 2.5rem;
+    margin: 1.5rem 2.5rem 0rem;
     border-radius: .5rem;
     transition: all 0.5s;
     animation: signal 3s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
@@ -268,6 +268,7 @@
               <a-tab-pane key="4" tab='{{ i18n "pages.settings.subSettings" }}'>
                 <a-list item-layout="horizontal">
                   <setting-list-item type="switch" title='{{ i18n "pages.settings.subEnable"}}' desc='{{ i18n "pages.settings.subEnableDesc"}}' v-model="allSetting.subEnable"></setting-list-item>
+                  <setting-list-item type="switch" title='{{ i18n "pages.settings.subSyncEnable"}}' desc='{{ i18n "pages.settings.subSyncEnableDesc"}}' v-model="allSetting.subSyncEnable"></setting-list-item>
                   <setting-list-item type="switch" title='{{ i18n "pages.settings.subEncrypt"}}' desc='{{ i18n "pages.settings.subEncryptDesc"}}' v-model="allSetting.subEncrypt"></setting-list-item>
                   <setting-list-item type="switch" title='{{ i18n "pages.settings.subShowInfo"}}' desc='{{ i18n "pages.settings.subShowInfoDesc"}}' v-model="allSetting.subShowInfo"></setting-list-item>
                   <setting-list-item type="text" title='{{ i18n "pages.settings.subListen"}}' desc='{{ i18n "pages.settings.subListenDesc"}}' v-model="allSetting.subListen"></setting-list-item>
@@ -439,7 +440,7 @@
           sockopt: {
             tcpKeepAliveIdle: 100,
             tcpMptcp: true,
-            tcpNoDelay: true
+            penetrate: true
           }
         }
       },
